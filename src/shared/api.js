@@ -19,7 +19,6 @@ const client = {
       return result;
     } catch (ex) {
       if (handleError) {
-        showError(ex);
       }
       throw ex;
     }
