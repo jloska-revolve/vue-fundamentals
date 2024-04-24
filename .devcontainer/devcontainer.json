@@ -6,10 +6,10 @@
 		"dockerfile": "Dockerfile"
 	},
 "remoteUser": "root",
-"postCreateCommand": "npm i",
 "customizations": {
   "vscode": {
 	"extensions": [
+	  "Vue.volar",
 	  "naumovs.color-highlight",
 	  "dbaeumer.vscode-eslint",
 	  "esbenp.prettier-vscode",
