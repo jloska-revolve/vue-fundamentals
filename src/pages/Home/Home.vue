@@ -4,6 +4,8 @@
     <ul v-if="showItems">
       <li v-for="item in items">{{ item }}</li>
     </ul>
+    <p v-else>No fruits to display.</p>
+    <button type="button" @click="toggleShowItems">Toggle Items</button>
   </div>
 </template>
 
@@ -19,11 +21,13 @@ export default {
   components: {
     // components register
   },
+  methods: {
+    toggleShowItems() {
+      this.showItems = !this.showItems;
+    },
+  },
   computed: {
     // component computed variables
-  },
-  methods: {
-    // component methods
   },
   watch: {
     // watched variables
