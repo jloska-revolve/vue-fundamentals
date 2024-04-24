@@ -1,21 +1,15 @@
 <template>
   <div style="display: flex; flex-direction: column">
-    <h2 v-if="showItems">Fruits:</h2>
-    <ul v-if="showItems">
-      <li v-for="item in items">{{ item }}</li>
-    </ul>
-    <p v-else>No fruits to display.</p>
-    <button type="button" @click="toggleShowItems">
-      Toggle items
-    </button>
+    <h2>Insert text here</h2>
+    <input v-model="userInput" />
+    <h2>{{ userInput }}</h2>
   </div>
 </template>
 
 <script>
 export default {
   data: () => ({
-    items: ["Apple", "Banana", "Orange"],
-    showItems: true,
+    userInput: "",
   }),
   methods: {
     toggleShowItems() {
