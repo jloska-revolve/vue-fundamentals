@@ -1,7 +1,3 @@
-<script setup>
-import Home from "./pages/Home/Home.vue";
-</script>
-
 <template>
   <div id="app">
     <div class="wrapper">
