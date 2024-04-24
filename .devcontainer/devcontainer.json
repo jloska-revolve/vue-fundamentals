@@ -1,0 +1,23 @@
+// See https://containers.dev/implementors/json_reference/ for configuration reference
+{
+	"name": "Vue fundamentals",
+	"workspaceFolder": "/workspace/vue_fundamentals",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+"remoteUser": "root",
+"postCreateCommand": "npm i",
+"customizations": {
+  "vscode": {
+	"extensions": [
+	  "naumovs.color-highlight",
+	  "dbaeumer.vscode-eslint",
+	  "esbenp.prettier-vscode",
+	  "formulahendry.auto-rename-tag"
+	]
+  }
+},
+"features": {
+	"ghcr.io/devcontainers-contrib/features/vue-cli:2": {}
+}
+}
