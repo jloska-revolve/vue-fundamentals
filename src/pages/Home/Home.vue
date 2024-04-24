@@ -1,6 +1,15 @@
 <template>
   <div style="display: flex; flex-direction: column">
-    <button type="button" @click="toggleShowItems">Toggle Items</button>
+    <h2 v-if="showItems">Fruits:</h2>
+    <ul v-if="showItems">
+      <li v-for="item in items">{{ item }}</li>
+    </ul>
+    <p v-else>No fruits to display.</p>
+    <button type="button" @click="toggleShowItems">
+      Toggle Items
+    </button>
+    <input v-model="userInput" />
+    <h2>{{ userInput }}</h2>
     <div class="normal">Class Example</div>
     <div :class="highlightClass">Class Binding Example</div>
     <div :style="textStyle">Style Binding Example</div>
@@ -10,7 +19,9 @@
 <script>
 export default {
   data: () => ({
+    items: ["Apple", "Banana", "Orange"],
     showItems: true,
+    userInput: "",
     isHighlighted: false,
     textColor: "red",
     textSize: 16,
