@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import home from './pages/Home/module';
+import users from './pages/Users/module';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
-    home,
+    users,
   },
 });
