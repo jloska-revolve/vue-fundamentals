@@ -1,11 +1,17 @@
 <template>
-  <div style="display: flex; flex-direction: column">Hello world</div>
+  <div style="display: flex; flex-direction: column">
+    <h2 v-if="showItems">Fruits:</h2>
+    <ul v-if="showItems">
+      <li v-for="item in items">{{ item }}</li>
+    </ul>
+  </div>
 </template>
 
 <script>
 export default {
   data: () => ({
-    // component global variables
+    items: ["Apple", "Banana", "Orange"],
+    showItems: true,
   }),
   props: {
     // component recived properties
@@ -22,14 +28,10 @@ export default {
   watch: {
     // watched variables
   },
-  async created() {
-  },
-  async mounted() {
-  },
-  async destroyed() {
-  },
-  async beforeMount() {
-  },
+  async created() {},
+  async mounted() {},
+  async destroyed() {},
+  async beforeMount() {},
 };
 </script>
 
