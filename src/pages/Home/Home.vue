@@ -1,19 +1,14 @@
 <template>
   <div style="display: flex; flex-direction: column">
-    <h2 v-if="showItems">Fruits:</h2>
-    <ul v-if="showItems">
-      <li v-for="item in items">{{ item }}</li>
-    </ul>
-    <p v-else>No fruits to display.</p>
-    <div :class="highlightClass">Class Binding Example</div>
+    <h2 v-if="showItems">Widać albo nie widać</h2>
+    <input v-model="userInput" />
   </div>
 </template>
 
 <script>
 export default {
   data: () => ({
-    items: ["Apple", "Banana", "Orange"],
-    // showItems: true 
+    userInput: "",
   }),
   props: {
     // component recived properties
@@ -22,29 +17,15 @@ export default {
     // components register
   },
   methods: {
-    toggleShowItems() {
-      this.showItems = !this.showItems;
-    },
+    // component methods
   },
   computed: {
-    showItems() 
-    {
-      return this.items.length === 0
-    },
-    highlightClass() {
-      if (!this.showItems) {
-        return {
-          normal: true,
-        };
-      } else {
-        return {
-          highlight: true,
-        };
-      }
-    },
+    // component computed properties
   },
   watch: {
-    // watched variables
+    userInput() {
+      this.showItems = !this.showItems;
+    },
   },
   async created() {},
   async mounted() {},
