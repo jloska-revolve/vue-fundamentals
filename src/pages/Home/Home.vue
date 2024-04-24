@@ -5,7 +5,7 @@
       <li v-for="item in items">{{ item }}</li>
     </ul>
     <p v-else>No fruits to display.</p>
-    <button type="button" @click="toggleShowItems">Toggle Items</button>
+    <div :class="highlightClass">Class Binding Example</div>
   </div>
 </template>
 
@@ -13,7 +13,7 @@
 export default {
   data: () => ({
     items: ["Apple", "Banana", "Orange"],
-    showItems: true,
+    // showItems: true 
   }),
   props: {
     // component recived properties
@@ -27,7 +27,21 @@ export default {
     },
   },
   computed: {
-    // component computed variables
+    showItems() 
+    {
+      return this.items.length === 0
+    },
+    highlightClass() {
+      if (!this.showItems) {
+        return {
+          normal: true,
+        };
+      } else {
+        return {
+          highlight: true,
+        };
+      }
+    },
   },
   watch: {
     // watched variables
